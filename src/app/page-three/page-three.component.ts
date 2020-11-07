@@ -5,13 +5,11 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   templateUrl: './page-three.component.html',
   styleUrls: ['./page-three.component.scss']
 })
-export class PageThreeComponent implements OnInit {
+export class PageThreeComponent {
 
   @Output() public next = new EventEmitter<void>();
 
+  tries = 1;
+
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

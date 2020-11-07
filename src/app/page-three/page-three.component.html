@@ -1,1 +1,5 @@
-<p>page-three works!</p>
+<div [class.justify-content-end]="tries%3===1" [class.justify-content-center]="tries%3===0" [class.justify-content-start]="tries%3===1" class="fill w-100 vh-100 d-flex flex-column p-3">
+  <button class="btn btn-lg btn-success mx-3" (mouseenter)="tries = tries + 1" (click)="tries = tries + 1">
+    Join lobby
+  </button>
+</div>
