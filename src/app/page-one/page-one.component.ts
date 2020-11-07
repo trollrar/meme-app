@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-page-one',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-one.component.scss']
 })
 export class PageOneComponent implements OnInit {
+
+  @Output() public next = new EventEmitter<void>();
 
   constructor() { }
 

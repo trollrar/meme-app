@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'meme-app';
+  public page = 1;
+
+  public next(): void {
+    this.page++;
+  }
 }

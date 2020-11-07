@@ -1,3 +1,7 @@
 <div class="container">
-  <app-page-one></app-page-one>
+  <app-page-one *ngIf="page===1" (next)="next()"></app-page-one>
+  <app-page-two *ngIf="page===2"></app-page-two>
+  <app-page-three *ngIf="page===3"></app-page-three>
+  <app-page-four *ngIf="page===4"></app-page-four>
+  <app-page-five *ngIf="page===5"></app-page-five>
 </div>
