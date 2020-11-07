@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
+import { PageThreeComponent } from './page-three/page-three.component';
+import { PageFourComponent } from './page-four/page-four.component';
+import { PageFiveComponent } from './page-five/page-five.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageOneComponent,
-    PageTwoComponent
+    PageTwoComponent,
+    PageThreeComponent,
+    PageFourComponent,
+    PageFiveComponent
   ],
   imports: [
     BrowserModule,
