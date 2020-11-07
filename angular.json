@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "meme-app"
+    }
+  },
+  "defaultProject": "meme-app",
+  "cli": {
+    "analytics": "c3d36173-5cbf-43de-96a7-62232465dd89"
+  }
 }
