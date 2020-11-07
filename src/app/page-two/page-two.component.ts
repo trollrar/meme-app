@@ -11,6 +11,7 @@ export class PageTwoComponent implements OnInit {
 
   timeLeft = 30;
   interval;
+  dots = '';
   img = 'assets/countdown/30.xcf.png';
 
   startTimer(): void {
@@ -101,6 +102,13 @@ export class PageTwoComponent implements OnInit {
 
   ngOnInit(): void {
     this.startTimer();
+    this.interval = setInterval(() => {
+      if (this.dots === '...') {
+        this.dots = '';
+      } else {
+        this.dots += '.';
+      }
+    }, 300);
   }
 
 }
