@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import {Observable, Subject} from 'rxjs';
 
@@ -10,6 +10,20 @@ import {Observable, Subject} from 'rxjs';
 export class PageFourComponent {
 
   @Output() public next = new EventEmitter<void>();
+
+  public width: number;
+  public height: number;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?: Event): void {
+    const win = !!event ? (event.target as Window) : window;
+    this.width = win.innerWidth;
+    this.height = win.innerHeight;
+  }
+
+  constructor() {
+    this.onResize();
+  }
 
   public webcamImage: WebcamImage = null;
   private trigger: Subject<void> = new Subject<void>();
