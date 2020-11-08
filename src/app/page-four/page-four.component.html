@@ -1,1 +1,15 @@
-<webcam></webcam>
+<div class="fill w-100 w-100 d-flex flex-column justify-content-center pb-3">
+<webcam style="height: 350px" class="w-100" [height]="350"
+        [width]="350"
+        [trigger]="triggerObservable"
+        (imageCapture)="handleImage($event)">
+</webcam>
+
+<button class="actionBtn" (click)="triggerSnapshot();">
+  Click Here and take the Shot</button>
+
+<div class="snapshot" *ngIf="webcamImage">
+  <h2>Here is your image!</h2>
+  <img [src]="webcamImage.imageAsDataUrl"/>
+</div>
+</div>

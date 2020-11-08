@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public page = 3;
+  public page = 4;
 
   public next(): void {
     this.page++;
