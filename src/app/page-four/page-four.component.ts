@@ -11,6 +11,8 @@ export class PageFourComponent {
 
   @Output() public next = new EventEmitter<void>();
 
+  counter = 0;
+
   public width: number;
   public height: number;
 
@@ -37,5 +39,15 @@ export class PageFourComponent {
 
   public get triggerObservable(): Observable<void> {
     return this.trigger.asObservable();
+  }
+
+  public startMessages(): void {
+    this.counter = 1;
+    setInterval(() => {
+        this.counter++;
+        if (this.counter === 13) {
+          this.triggerSnapshot();
+        }
+    }, 3000);
   }
 }

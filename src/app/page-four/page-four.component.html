@@ -1,18 +1,31 @@
-<div class="fill w-100 w-100 d-flex flex-column justify-content-center pb-3">
-  <div style="height: 350px" class="w-100 border border-danger" (window:resize)="onResize($event)">
-    <webcam [height]="height"
-            [width]="width"
+<div *ngIf="counter < 14" class="fill w-100 vh-100 d-flex flex-column justify-content-center p-3">
+
+  <img style="height: 240px" src="assets/crown.png">
+  <div style="height: 350px" class="w-100 d-flex flex-row justify-content-center " (window:resize)="onResize($event)">
+    <webcam class="border border-danger" [height]="350"
+            [width]="350"
             [trigger]="triggerObservable"
             (imageCapture)="handleImage($event)">
     </webcam>
   </div>
 
-  <button class="actionBtn" (click)="triggerSnapshot();">
-    Click Here and take the Shot
-  </button>
+  <div class="text-shadow w-100 text-center card bg-secondary shadow p-3 mt-3 text-white">
 
-  <div class="snapshot" *ngIf="webcamImage">
-    <h2>Here is your image!</h2>
-    <img [src]="webcamImage.imageAsDataUrl"/>
+    <button *ngIf="counter === 0 "class="btn btn-secondary" (click)="startMessages()"><h4>Ready your camera and play!</h4></button>
+    <h4 *ngIf="counter === 1 ">Calibrating your camera for detecting your smile</h4>
+    <h4 *ngIf="counter === 2 ">Please stay still</h4>
+    <h4 *ngIf="counter === 3">Ok now smile</h4>
+    <h4 *ngIf="counter === 4 || counter === 5">Now touch your ears</h4>
+    <h4 *ngIf="counter === 6 || counter === 7">Turn camera 180 degrees</h4>
+    <h4 *ngIf="counter === 8 || counter === 9 || counter === 10">There's a smudge on your lens please clean and repeat the process</h4>
+    <h4 *ngIf="counter === 11">Smileee :)</h4>
+    <h4 *ngIf="counter === 12">hahhaha</h4>
+    <h4 *ngIf="counter === 13">We completely wasted your time</h4>
   </div>
+</div>
+<div class="text-white text-shadow fill w-100 vh-100 d-flex flex-column justify-content-center p-3" *ngIf="counter > 13">
+  <h1>The face you make:</h1>
+  <img style="height: 350px; width: 350px" [src]="webcamImage.imageAsDataUrl"/>
+  <h1>When you get trolled</h1>
+  <button class="btn btn-primary btn-lg shadow" (click)="next.emit()"><h3>Now you can play the game</h3></button>
 </div>

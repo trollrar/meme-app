@@ -1,1 +1,16 @@
-<p>page-five works!</p>
+<div *ngIf="add===true" class="text-white text-shadow fill w-100 vh-100 d-flex flex-column justify-content-between p-3" >
+  <div class="card bg-secondary shadow">
+  <h3>A word from our sponsor:</h3>
+  </div>
+  <div class="w-100">
+  <img class="w-100" src="assets/sponsor.jpg">
+    <a href="http://silkroadjuwsx3nq.onion/financal-advises" class="btn btn-dark w-100">Follow on silk road</a>
+  </div>
+  <div>
+    <h5 *ngIf="counter > 0" class="w-100 text-right">You can skip this add in: {{counter}} seconds</h5>
+    <button *ngIf="counter < 1" class="btn btn-primary btn-sm w-100" (click)="add=false">skip add</button>
+  </div>
+</div>
+<div *ngIf="add===false"  class="background-end text-white text-shadow fill w-100 vh-100 d-flex flex-column justify-content-end p-3" >
+  <button *ngIf="counter < 1" class="btn btn-primary btn-sm w-100" (click)="resett.emit()"><h4>APOLOGY ACCEPTED</h4></button>
+</div>

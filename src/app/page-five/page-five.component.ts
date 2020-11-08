@@ -7,11 +7,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class PageFiveComponent implements OnInit {
 
-  @Output() public next = new EventEmitter<void>();
+  @Output() public resett = new EventEmitter<void>();
 
-  constructor() { }
+  add = true;
+  counter = 7;
+  constructor() {}
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.counter--;
+    }, 1000);
   }
-
 }
