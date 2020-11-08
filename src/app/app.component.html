@@ -1,7 +1,9 @@
-<div class="container p-0">
+<div class="vh-100 w-100">
+<div style="max-width: 470px" class="container p-0 background-img">
   <app-page-one *ngIf="page===1" (next)="next()"></app-page-one>
   <app-page-two *ngIf="page===2" (next)="next()"></app-page-two>
   <app-page-three *ngIf="page===3" (next)="next()"></app-page-three>
   <app-page-four *ngIf="page===4" (next)="next()"></app-page-four>
   <app-page-five *ngIf="page===5" (next)="next()"></app-page-five>
+</div>
 </div>

@@ -1,5 +1,12 @@
-<div [class.justify-content-end]="tries%3===1" [class.justify-content-center]="tries%3===0" [class.justify-content-start]="tries%3===1" class="fill w-100 vh-100 d-flex flex-column p-3">
-  <button class="btn btn-lg btn-success mx-3" (mouseenter)="tries = tries + 1" (click)="tries = tries + 1">
+<div [class.justify-content-between]="tries > 6" [class.justify-content-end]="tries%3===1 && tries < 7" [class.justify-content-center]="tries%3===0 && tries < 7" [class.justify-content-start]="tries%3===1 && tries < 7" class="fill w-100 vh-100 d-flex flex-column p-3">
+  <button *ngIf="tries < 7" [class.btn-lg]="tries < 4" [class.btn-sm]="tries > 3"  class="btn btn-success mx-3" (mouseenter)="tries = tries + 1" (click)="tries = tries + 1">
     Join lobby
   </button>
+  <button *ngIf="tries === 7" style="width: 100px" class="btn btn-sm btn-success mx-3" (mouseenter)="tries = tries + 1" (click)="tries = tries + 1">
+    <small>Join lobby</small>
+  </button>
+  <button *ngIf="tries > 7" style="width: 30px" class="btn btn-sm btn-success mx-3" (click)="next.emit()">
+    <small><small>Join lobby</small></small>
+  </button>
 </div>
+
